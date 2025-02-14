@@ -1,0 +1,30 @@
+Since the dataset is uncleaned, here are the key areas you should clean:
+
+1. Missing Values
+Customer Name: Some names are missing (""). You can:
+Fill missing names with "Unknown Customer"
+Remove rows with missing names if necessary
+Price: Some prices are None. You can:
+Fill with the average or median price of the same product
+Remove rows with missing prices if they are critical
+Delivery Date: Some are missing (""). You can:
+Fill with an estimated delivery date based on the order date
+Mark as "Pending" if delivery is not yet completed
+
+2. Incorrect or Inconsistent Data
+Product Name: Some values are "UNKNOWN". You can:
+Replace "UNKNOWN" with "Miscellaneous Item"
+Investigate if they match existing products
+Payment Status: Inconsistent values like "Completed" and "Paid". You can:
+Standardize these (e.g., "Paid" for completed transactions)
+Group similar statuses together ("Processing" → "Pending")
+
+3. Formatting Issues
+Order Date: Some dates are in the wrong format. You should:
+Convert all dates to YYYY-MM-DD format
+Customer Email: Some values are "invalid_email". You should:
+Remove or replace them with "unknown@example.com"
+
+4. Outliers and Logical Errors
+Quantity: Some values are unusually high (10-100). Check if they are valid or errors.
+Delivery Date: Some might be before the Order Date, which is impossible. Fix these.
